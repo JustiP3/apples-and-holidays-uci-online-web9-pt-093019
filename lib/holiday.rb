@@ -95,7 +95,7 @@ def all_supplies_in_holidays(holiday_hash)
 
       i = 1
       supplies.each do |value|
-          if i != supplies.length
+          if (i == supplies.length)
             message << value
           else
             message << value + ", "
