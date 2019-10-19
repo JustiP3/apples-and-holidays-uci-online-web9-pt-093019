@@ -75,9 +75,9 @@ end
 def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |season, holidays|
     capital_city = "#{season}:"
-    capital_city[0].upcase
+    capital_city[0].capitalize 
     puts capital_city
-    
+
     holidays.each do |holidays, supplies|
       message = "  "
       formatted = []
