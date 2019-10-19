@@ -77,15 +77,33 @@ def all_supplies_in_holidays(holiday_hash)
     puts "#{season}:".capitalize
 
     holidays.each do |holidays, supplies|
-    formatted = "#{holidays}".split("_").collect {|x|x[0].upcase}
-   binding.pry
-  #  print "   #{holidays}:".capitalize + " "
+      message = "  "
+      formatted = []
 
-      supplies.each do |value|
-      print value + " "
-
+      if "#{holidays}".find("_") == "_"
+        formatted = "#{holidays}".split("_")
+      else
+        formatted = ["#{holidays}"]
       end
-    end
+      formatted.collect {|x| x.capitalize}
+
+      formated.each_with_index do |x|
+        message << x
+        if index == -1
+          message << ": "
+        end # if block
+      end #formatted each
+
+      supplies.each_with_index do |value|
+          if index == -1
+            message << value
+          else
+            message << value + ", "
+          end
+
+      end # supplies each
+      puts message
+    end #holidays each
 
   end
 
