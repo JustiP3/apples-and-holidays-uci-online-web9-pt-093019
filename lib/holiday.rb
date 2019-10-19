@@ -82,14 +82,22 @@ def all_supplies_in_holidays(holiday_hash)
       formatted = []
 
       if "#{holidays}".include?("_") == true
-        formatted = "#{holidays}".split("_")
-        okay = formatted.collect do |x|
+      formatted = "#{holidays}".split("_")
+          okay = formatted.collect do |x|
           x.capitalize
-        end
-        message << okay[0] + " " + okay[1]
+          end # each = formatted collect block
+
+          a = 1
+          okay.each do |word|
+          message << word
+          if a != each.length
+            message << " "
+          end # end if statement
+          a +=1
+        end # end okay each block
       else
         message << "#{holidays}".capitalize
-      end
+      end # if / else
 
       message << ": "
 
@@ -105,9 +113,8 @@ def all_supplies_in_holidays(holiday_hash)
       puts message
     end #holidays each
 
-  end
-
-end
+  end #holiday hash each
+end #method
   # iterate through holiday_hash and print items such that your readout resembles:
     #Winter:
   #    Chirstmas th
