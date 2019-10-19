@@ -86,7 +86,7 @@ def all_supplies_in_holidays(holiday_hash)
         formatted.each do |x|
           x.capitalize
         end
-        message << formatted[0] + ", " + formatted[1]
+        message << formatted[0] + " " + formatted[1]
       else
         message << "#{holidays}".capitalize
       end
