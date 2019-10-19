@@ -83,16 +83,14 @@ def all_supplies_in_holidays(holiday_hash)
 
       if "#{holidays}".include?("_") == true
         formatted = "#{holidays}".split("_")
-        formatted.collect {|x| x[0].capitalize }
+        formatted.each do |x|
+          x.capitalize
+        end
+        message << formatted[0] + ", " + formatted[1]
       else
-        formatted = ["#{holidays}"]
-        formatted[0].capitalize
+        message << "#{holidays}".capitalize
       end
-      
 
-      formatted.each do |x|
-        message << x
-      end #formatted each
       message << ": "
 
       i = 1
