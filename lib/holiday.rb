@@ -147,11 +147,11 @@ bbq_holidays_array = []
 holiday_hash.each do |season, holidays|
 
   holidays.each do |holiday, material|
-    bbq_holiday? = false
+    bbq_holiday = false
     material.each do |mat|
       if mat == "BBQ"
         bbq_holiday = true
-      end 
+      end
     end #materails each
     if bbq_holiday == true
       bbq_holidays_array << holiday
