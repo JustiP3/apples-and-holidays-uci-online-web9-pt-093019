@@ -146,7 +146,7 @@ bbq_holidays_array = []
 
 holiday_hash.each do |season, holidays|
   holiday_values = holidays.values
-  holiday_keys = holiday.keys
+  holiday_keys = holidays.keys
 
     if holiday_values.include?("BBQ")
       bbq_holidays_array << holiday_keys[holiday_values.index("BBQ")]
