@@ -145,14 +145,21 @@ def all_holidays_with_bbq(holiday_hash)
 bbq_holidays_array = []
 
 holiday_hash.each do |season, holidays|
-  holiday_values = holidays.values
-  holiday_keys = holidays.keys
 
-
-    if holiday_values.include?(["BBQ"])
-      bbq_holidays_array << holiday_keys[holiday_values.index("BBQ")]
+  holidays.each do |holiday, material|
+    bbq_holiday? = false
+    material.each do |mat|
+      if mat == "BBQ"
+        bbq_holiday = true
+      end 
+    end #materails each
+    if bbq_holiday == true
+      bbq_holidays_array << holiday
     end
-  end
+  end #holidays each
+
+
+end #holiday hash each
 
 return bbq_holidays_array
 
