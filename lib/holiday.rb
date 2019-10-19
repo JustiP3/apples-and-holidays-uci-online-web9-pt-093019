@@ -90,7 +90,7 @@ def all_supplies_in_holidays(holiday_hash)
           a = 1
           okay.each do |word|
           message << word
-          if a != each.length
+          if a != okay.length
             message << " "
           end # end if statement
           a +=1
