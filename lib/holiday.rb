@@ -87,15 +87,13 @@ def all_supplies_in_holidays(holiday_hash)
       end
       formatted.collect {|x| x.capitalize}
 
-      formatted.each_with_index do |x|
+      formatted.each do |x|
         message << x
-        if index == -1
-          message << ": "
-        end # if block
       end #formatted each
-
+      message << ": "
+      
       supplies.each_with_index do |value|
-          if index == -1
+          if index[-1] == true
             message << value
           else
             message << value + ", "
