@@ -91,14 +91,15 @@ def all_supplies_in_holidays(holiday_hash)
         message << x
       end #formatted each
       message << ": "
-      
-      supplies.each_with_index do |value|
-          if index[-1] == true
+
+      i = 0
+      supplies.each do |value|
+          if i < supplies.length
             message << value
           else
             message << value + ", "
           end
-
+          i += 1 
       end # supplies each
       puts message
     end #holidays each
