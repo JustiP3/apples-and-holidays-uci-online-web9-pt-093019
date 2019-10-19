@@ -80,7 +80,7 @@ def all_supplies_in_holidays(holiday_hash)
       message = "  "
       formatted = []
 
-      if "#{holidays}".find("_") == "_"
+      if "#{holidays}".include?("_") == true
         formatted = "#{holidays}".split("_")
       else
         formatted = ["#{holidays}"]
