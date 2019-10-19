@@ -149,7 +149,7 @@ holiday_hash.each do |season, holidays|
   holiday_keys = holidays.keys
 binding.pry
 
-    if holiday_values.include?("BBQ")
+    if holiday_values.include?(["BBQ"])
       bbq_holidays_array << holiday_keys[holiday_values.index("BBQ")]
     end
   end
